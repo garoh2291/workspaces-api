@@ -60,7 +60,7 @@ class WorkspaceController {
         data: workspace,
       });
     } catch (e) {
-      const error = (e.code = 11000 ? "Duplicated slug" : "Server Error");
+      const error = (e.code = 11000 ? "Slug must be unique" : "Server Error");
       return res.status(404).json({
         message: error,
       });
@@ -84,7 +84,7 @@ class WorkspaceController {
         data: updatedWorkspace,
       });
     } catch (e) {
-      const error = (e.code = 11000 ? "Duplicated slug" : "Server Error");
+      const error = (e.code = 11000 ? "Slug must be unique" : "Server Error");
       return res.status(404).json({
         message: error,
       });
@@ -97,22 +97,6 @@ class WorkspaceController {
 
       const workspace = await Workspace.findByIdAndDelete({
         _id,
-      });
-
-      return res.status(200).json({
-        success: true,
-        data: workspace,
-      });
-    } catch (e) {
-      return res.status(404).json(e);
-    }
-  };
-
-  getSingle = async (req, res) => {
-    try {
-      const { id } = req.params;
-      const workspace = await Workspace.findById({
-        _id: id,
       });
 
       return res.status(200).json({

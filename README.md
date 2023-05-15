@@ -6,6 +6,8 @@ You will need install `Node.js`, `npm` and `MongoDB` in your environement.
 
 ## Running the project
 
+    Rename .env.locale to .env and set the environment variables // MongoDV connection string
+
     $ npm start
 
 ## Making requests

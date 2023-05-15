@@ -14,7 +14,10 @@ class WorkspaceController {
         dbQuery.$or = [{ name: searchReg }];
       }
 
-      // add pagination
+      if (query.userId) {
+        dbQuery.userId = query.userId;
+      }
+
       const page = parseInt(query.page) || 1;
       const limit = parseInt(query.limit) || 10;
       const skip = (page - 1) * limit;

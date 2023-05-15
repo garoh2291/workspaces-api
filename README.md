@@ -39,7 +39,7 @@ userId: `{userId}`
 
 #### Update a workspace
 
-request url `API_HOST/api/v1/workspaces/:worksapceId`
+request url `API_HOST/api/v1/workspaces/:workspaceId`
 request method `PUT`
 request body
 `{`
@@ -49,7 +49,7 @@ slug: `{String}`, (required)
 
 #### Delete the workspace
 
-request url `API_HOST/api/v1/workspaces/:worksapceId`
+request url `API_HOST/api/v1/workspaces/:workspaceId`
 request method `DELETE`
 
 ### Check slug availability
